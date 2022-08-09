@@ -32222,3 +32222,647 @@ Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.6ms)
 Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:45 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:45 +1000
+  [1m[36mFlight Load (1.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  [1m[36mFlight Load (1.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (16.6ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 1.2ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (13.2ms)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:49 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:49 +1000
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (9.5ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (9.1ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:53 +1000
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:53 +1000
+Processing by FlightsController#index as JSON
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (7.6ms)
+  Rendered flights/index.json.jbuilder (7.5ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:57 +1000
+Processing by FlightsController#index as JSON
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:57:57 +1000
+  Rendering flights/index.json.jbuilder
+Processing by FlightsController#index as JSON
+  [1m[36mFlight Load (1.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (10.6ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 1.2ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (7.7ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:01 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:01 +1000
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (1.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/index.json.jbuilder (13.7ms)
+Completed 200 OK in 20ms (Views: 14.4ms | ActiveRecord: 0.9ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (6.3ms)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:05 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:05 +1000
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/index.json.jbuilder (12.2ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 0.9ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (8.5ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:09 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:09 +1000
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (11.8ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.7ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (6.9ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:13 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:13 +1000
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  [1m[36mFlight Load (1.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (17.0ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.8ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (12.6ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:17 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:17 +1000
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  [1m[36mFlight Load (0.8ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  Rendered flights/index.json.jbuilder (11.6ms)
+  ↳ app/views/flights/index.json.jbuilder:1
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.7ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (5.5ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:21 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:21 +1000
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.9ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (14.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.5ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (10.8ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:25 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:25 +1000
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (13.3ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.4ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (10.4ms)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:29 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:29 +1000
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (10.2ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.3ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (6.9ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:33 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:33 +1000
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (11.4ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.5ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:37 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:37 +1000
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (15.3ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.7ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (7.0ms)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:41 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:41 +1000
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (12.8ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.6ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (4.9ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:45 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:45 +1000
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (16.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.7ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (8.1ms)
+Completed 200 OK in 15ms (Views: 11.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:49 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:49 +1000
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/index.json.jbuilder (7.5ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.5ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/index.json.jbuilder (4.6ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:53 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:53 +1000
+  [1m[36mFlight Load (1.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.0ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  [1m[36mFlight Load (1.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (17.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 1.2ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/index.json.jbuilder (13.8ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:57 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:58:57 +1000
+  [1m[36mFlight Load (1.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (12.7ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 1.2ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (8.0ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:01 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:01 +1000
+  [1m[36mFlight Load (0.6ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.8ms)
+  [1m[36mFlight Load (1.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (14.6ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.6ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (11.6ms)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:05 +1000
+Processing by FlightsController#index as JSON
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:05 +1000
+  Rendering flights/index.json.jbuilder
+Processing by FlightsController#index as JSON
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  [1m[36mFlight Load (0.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (8.1ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (6.6ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:09 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:09 +1000
+  [1m[36mFlight Load (0.9ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  [1m[36mFlight Load (0.5ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/index.json.jbuilder (10.5ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.9ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (8.0ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:13 +1000
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:59:13 +1000
+  [1m[36mFlight Load (1.1ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+Processing by FlightsController#index as JSON
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendering flights/index.json.jbuilder
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  [1m[36mFlight Load (1.3ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/index.json.jbuilder (15.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 1.1ms)
+
+
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/index.json.jbuilder (13.5ms)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 1.3ms)
+
+
