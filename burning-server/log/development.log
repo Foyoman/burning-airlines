@@ -3390,6 +3390,38 @@ Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.6ms)
 Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms)
 
 
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2022-08-09 20:02:55 +1000
+  
+PG::ConnectionBad (connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+pg (1.4.2) lib/pg/connection.rb:745:in `connect_start'
+pg (1.4.2) lib/pg/connection.rb:745:in `connect_internal'
+pg (1.4.2) lib/pg/connection.rb:738:in `connect_to_hosts'
+pg (1.4.2) lib/pg/connection.rb:661:in `new'
+pg (1.4.2) lib/pg.rb:69:in `connect'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.8.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+=======
 Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:56:20 +1000
 Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:56:20 +1000
   
@@ -3764,6 +3796,7 @@ ActionController::RoutingError (No route matches [GET] "/secrets.json"):
 Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:56:36 +1000
   
 actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+>>>>>>> 0d532d486cfa60e416c91431e155215b5348e256
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -3791,6 +3824,38 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2022-08-09 20:02:59 +1000
+  
+PG::ConnectionBad (connection to server on socket "/tmp/.s.PGSQL.5432" failed: No such file or directory
+	Is the server running locally and accepting connections on that socket?
+):
+  
+pg (1.4.2) lib/pg/connection.rb:745:in `connect_start'
+pg (1.4.2) lib/pg/connection.rb:745:in `connect_internal'
+pg (1.4.2) lib/pg/connection.rb:738:in `connect_to_hosts'
+pg (1.4.2) lib/pg/connection.rb:661:in `new'
+pg (1.4.2) lib/pg.rb:69:in `connect'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.8.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+=======
   
 ActionController::RoutingError (No route matches [GET] "/secrets.json"):
   
@@ -3887,6 +3952,7 @@ puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 ActionController::RoutingError (No route matches [GET] "/secrets.json"):
   
 actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+>>>>>>> 0d532d486cfa60e416c91431e155215b5348e256
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
 web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
@@ -3914,6 +3980,8 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:56:41 +1000
 Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:56:41 +1000
 Processing by FlightsController#index as JSON
@@ -26476,6 +26544,9 @@ Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 1.6ms)
 Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 0.5ms)
 
 
+<<<<<<< HEAD
+>>>>>>> 0d532d486cfa60e416c91431e155215b5348e256
+=======
 Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:31:27 +1000
 Processing by FlightsController#index as JSON
 Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:31:27 +1000
@@ -28996,6 +29067,7 @@ Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms)
 Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.6ms)
 
 
+<<<<<<< HEAD
 Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 20:37:13 +1000
 Processing by FlightsController#index as JSON
   Rendering flights/index.json.jbuilder
@@ -32866,3 +32938,6 @@ Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 1.1ms)
 Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 1.3ms)
 
 
+=======
+>>>>>>> db8efec67600ea2b1522065ce6f7061154da0420
+>>>>>>> 7f2b70ef1c65cd1f8941b291ef969e1eb2605b03
