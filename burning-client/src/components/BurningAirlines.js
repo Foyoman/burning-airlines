@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import FlightGallery from './FlightGallery';
+import AirplaneGallery from './AirplaneGallery';
+import FlightSearch from './FlightSearch';
+
 
 const SERVER_URL = 'http://localhost:3001/flights.json'; // Later: change this to the deployed URL
 
@@ -9,9 +12,11 @@ class BurningAirlines extends Component {
     constructor() {
         super();
         this.state = {
-            flights: []
+            flights: [],
+            airplanes: []
         };
         this.saveFlight = this.saveFlight.bind(this);
+        this.saveAirplane = this.saveAirplane.bind(this);
     }
 
     componentDidMount() {
@@ -21,14 +26,26 @@ class BurningAirlines extends Component {
             });
             setTimeout(fetchFlights, 4000);
         };
+        const fetchAirplanes = () => {
+            axios(SERVER_URL).then((response) => {
+                this.setState({airplanes: response.data});
+            });
+            setTimeout(fetchAirplanes, 4000);
+        }
 
         fetchFlights();
+        fetchAirplanes();
     }
 
     saveFlight(flightInfo) {
-        axios.post(SERVER_URL, { flightInfo: flightInfo }).then
-        ((response) => {
+        axios.post(SERVER_URL, { flightInfo: flightInfo }).then        ((response) => {
             this.setState({flights: [response.data, ...this.state.flights]})
+        });
+    }
+
+    saveAirplane(airplaneInfo) {
+        axios.post(SERVER_URL, { airplaneInfo: airplaneInfo }).then((response) => {
+            this.setState({airplanes: [response.data, ...this.state.airplanes]})
         });
     }
 
@@ -37,6 +54,8 @@ class BurningAirlines extends Component {
             <div>
                 <h1>Burning Airlines</h1>
                 <FlightGallery flights={ this.state.flights } />
+                <AirplaneGallery airplanes={ this.state.airplanes } />
+                <FlightSearch />
             </div>
         )
     }

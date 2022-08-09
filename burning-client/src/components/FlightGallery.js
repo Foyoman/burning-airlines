@@ -13,21 +13,26 @@ const FlightGallery = (props) => {
                     <th>Destination</th>
                     <th>Date</th>
                     <th>Airplane</th>
-                    <th colspan="3"></th>
+                    <th colspan="5"></th>
                     </tr>
                 </thead>
             
             
                 <tbody>
-                    {/* { _(props.flights).map((f) =>
-                        <tr>
-                            <td>f.flight_number</td>
-                        </tr> ) }
-                     */}
-                    { props.flights.map((f) => <tr key={ f.id }>{ f.flight_number }</tr>) }
-                    
-                   
 
+                    { props.flights.map((f) => {
+                        return (
+                            <tr key={ f.id }>
+                                <td>{ f.flight_number }</td>
+                                <td>{ f.origin }</td>
+                                <td>{ f.destination }</td>
+                                <td>{ f.date }</td>
+                                <td>{ f.airplane_id }</td>
+                            </tr>
+                        )
+                    })}
+                                       
+                    {/* { props.flights.map((f) => <tr key={ f.id }>{ f.flight_number }</tr>) } */}
 
                 </tbody>
 
