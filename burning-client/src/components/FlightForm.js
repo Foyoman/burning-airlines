@@ -24,8 +24,8 @@ const FlightForm = (props) => {
             <button onClick={ content }>Depart</button>
             <input type="date" onChange={ _handleChange } value={ content }/>
             <button onClick={ content }>Return</button>
-            <select value="Lmao" onChange={ _handleChange }>
-                <option> 1 adult</option>
+            <select onChange={ _handleChange }>
+                <option></option>
                 <option> 2 adult</option>
                 <option> 3 adult</option>
                 <option> 4 adult</option>
