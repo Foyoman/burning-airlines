@@ -26,6 +26,8 @@ const FlightGallery = (props) => {
                      */}
                     { props.flights.map((f) => <tr key={ f.id }>{ f.flight_number }</tr>) }
                     
+                   
+
 
                 </tbody>
 
