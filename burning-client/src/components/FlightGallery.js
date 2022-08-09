@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import _ from 'lodash';
 
 const FlightGallery = (props) => {
     return (
@@ -18,9 +19,12 @@ const FlightGallery = (props) => {
             
             
                 <tbody>
-                    {/* { props.flights.forEach } */}
-
-                    { props.flights.map((f) => <p key={ f.id }>{ f.flight_number }</p>) }
+                    {/* { _(props.flights).map((f) =>
+                        <tr>
+                            <td>f.flight_number</td>
+                        </tr> ) }
+                     */}
+                    { props.flights.map((f) => <tr key={ f.id }>{ f.flight_number }</tr>) }
                     
 
                 </tbody>
