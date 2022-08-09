@@ -18,7 +18,7 @@ Users.destroy_all
 
 u1 = User.create :email => 'EddieGrugrer@gmail.com', :passowrd => 'chicken', :admin => true 
 u2 = User.create :email => 'GuillyWilly@gmail.com', :passowrd => 'chicklen'
-u3 = User.create :email =>'CJ.Adlay@gmail.com', :password  =>'chicken' 
+u3 = User.create :email =>'CJ.Adlay@gmail.com', :password  =>'chicken' , :admin => true
 u4 = User.create :email => 'TenzangMyBoo@gmail.com', :password =>'chicken'
 u5 = User.create :email => 'JoeTurnsBull@gmail.com', :password => 'chciken', :admin => true 
 
