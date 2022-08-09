@@ -512,3 +512,737 @@ Processing by AirplanesController#index as HTML
 Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/airplanes" for 127.0.0.1 at 2022-08-09 19:44:57 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.3ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  ↳ app/views/airplanes/index.html.erb:16
+  Rendered airplanes/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2022-08-09 19:44:58 +1000
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2022-08-09 19:45:09 +1000
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DCukGlR4K3qnivoD+vvtID6CE1uZnwpL5UF9SI9daNhfH2Gm/odWiRRHvri/BGOLgU6ludI/9hkFBTFFp4sB4g==", "user"=>{"email"=>"rob@bob.ga.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rob@bob.ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest") VALUES ($1, $2) RETURNING "id"[0m  [["email", "rob@bob.ga.co"], ["password_digest", "$2a$12$nZudBPR2P0YL7G9hAcT/JeKnvD4unoyvLdt2enE7NNfZ1dBZfCedy"]]
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:16
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:17
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "rob@bob.ga.co"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:17
+Redirected to http://localhost:3001/
+Completed 302 Found in 262ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-09 19:45:09 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:45:17 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:45:33 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-08-09 19:45:40 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dyJCGVwGrr2UCEyTIYngucOCfJE5wsALcQ7xTOW1s1ERglFjEPNjxpv1APPKBl39+4VmgLRQ8hg4Rd0JoM7wsg==", "email"=>"rob@bob.ga.co", "password"=>"[FILTERED]", "commit"=>"Log in"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.username does not exist
+LINE 1: SELECT  "users".* FROM "users" WHERE "users"."username" IS N...
+                                             ^
+: SELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1):
+  
+app/controllers/session_controller.rb:7:in `create'
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:46:49 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-08-09 19:46:52 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IThzx44updo+J7afLPcYcffvxSOP/lpqEACy72g3NhdHmGC9wttooTHa+v/HeKU1z+jfMgJsaHlZS56qLUx19A==", "email"=>"rob@bob.ga.co", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rob@bob.ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3001/
+Completed 302 Found in 259ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-09 19:46:52 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:46:58 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-08-09 19:47:02 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LfxWbWpap2DVTZlGy8clXS642EiVPeYbjeWi39QwY2BfmYefKRj4DTHHYpDCIJWtS9OEA5FMtkgaEjG9+o/Jyg==", "email"=>"rob@bob.ga.co", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rob@bob.ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3001/
+Completed 302 Found in 250ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-09 19:47:03 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:47:53 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-08-09 19:47:57 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+cj0f/fY8Wkc7cRp3+0JlFCXy/LY6I9sp3o/1/xZvElgvIjvJ08qED5TMeumATWNCkDZM8S8m4lanudcU7MWw==", "email"=>"rob@bob.ga.co", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rob@bob.ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3001/
+Completed 302 Found in 254ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-09 19:47:58 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:47:59 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-08-09 19:48:02 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wr2xaT5irlnb1X+BoPqVz1Dr/GM12RkOipLGAPiN/k4o2GCbfSDxND9fhFepHSU/NYCgKDGoSV0dZVVi1jJU5A==", "email"=>"rob@bob.ga.co", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rob@bob.ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3001/login
+Completed 302 Found in 262ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2022-08-09 19:48:02 +1000
+Processing by SessionController#new as HTML
+  Rendering session/new.html.erb within layouts/application
+  Rendered session/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2022-08-09 19:49:03 +1000
+Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4s1kiNUjBKDmHBw/wz3KNc9dj+Wrwy20GBx9OpIWwxqEbXfymdbJ2+nhUF8osndx91qV9CZRH6dRV1F/122A+Q==", "email"=>"EddieGrugrer@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "EddieGrugrer@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:7
+Redirected to http://localhost:3001/
+Completed 302 Found in 255ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2022-08-09 19:49:04 +1000
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 12ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/airplanes" for 127.0.0.1 at 2022-08-09 19:51:53 +1000
+Processing by AirplanesController#index as HTML
+  Rendering airplanes/index.html.erb within layouts/application
+  [1m[36mAirplane Load (0.3ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  ↳ app/views/airplanes/index.html.erb:16
+  Rendered airplanes/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/airplanes.json" for 127.0.0.1 at 2022-08-09 19:51:56 +1000
+Processing by AirplanesController#index as JSON
+  Rendering airplanes/index.json.jbuilder
+  [1m[36mAirplane Load (0.3ms)[0m  [1m[34mSELECT "airplanes".* FROM "airplanes"[0m
+  ↳ app/views/airplanes/index.json.jbuilder:1
+  Rendered airplanes/_airplane.json.jbuilder (0.8ms)
+  Rendered airplanes/_airplane.json.jbuilder (0.3ms)
+  Rendered airplanes/_airplane.json.jbuilder (0.3ms)
+  Rendered airplanes/_airplane.json.jbuilder (0.4ms)
+  Rendered airplanes/_airplane.json.jbuilder (0.3ms)
+  Rendered airplanes/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:19 +1000
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:19 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:23 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:23 +1000
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:27 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:27 +1000
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:31 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:31 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:54:33 +1000
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:54:33 +1000
+Processing by FlightsController#index as JSON
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  [1m[36mFlight Load (3.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.6ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.3ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.4ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/index.json.jbuilder (16.9ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+Completed 200 OK in 25ms (Views: 16.5ms | ActiveRecord: 4.7ms)
+
+
+  Rendered flights/index.json.jbuilder (19.1ms)
+Completed 200 OK in 25ms (Views: 14.0ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:35 +1000
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:35 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:54:37 +1000
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:54:37 +1000
+Processing by FlightsController#index as JSON
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.7ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (1.1ms)
+  Rendered flights/_flight.json.jbuilder (0.7ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/index.json.jbuilder (10.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.7ms)
+
+
+  Rendered flights/index.json.jbuilder (9.9ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:39 +1000
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:39 +1000
+  
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:54:41 +1000
+Started GET "/flights.json" for 127.0.0.1 at 2022-08-09 19:54:41 +1000
+Processing by FlightsController#index as JSON
+Processing by FlightsController#index as JSON
+  Rendering flights/index.json.jbuilder
+  Rendering flights/index.json.jbuilder
+  [1m[36mFlight Load (0.4ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  [1m[36mFlight Load (0.2ms)[0m  [1m[34mSELECT "flights".* FROM "flights"[0m
+  ↳ app/views/flights/index.json.jbuilder:1
+  Rendered flights/_flight.json.jbuilder (0.5ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.2ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+  Rendered flights/index.json.jbuilder (6.0ms)
+  Rendered flights/_flight.json.jbuilder (0.1ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+  Rendered flights/index.json.jbuilder (5.9ms)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:43 +1000
+Started GET "/secrets.json" for 127.0.0.1 at 2022-08-09 19:54:43 +1000
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/secrets.json"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

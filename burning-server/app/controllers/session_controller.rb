@@ -3,8 +3,8 @@ class SessionController < ApplicationController
     end
   
     def create
-        # find the user by username
-        user = User.find_by :username => params[:username]
+        # find the user by email
+        user = User.find_by :email => params[:email]
         # if the password matches
         if user.present? && user.authenticate(params[:password])
             # remember the user

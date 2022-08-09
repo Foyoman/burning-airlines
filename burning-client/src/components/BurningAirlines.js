@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const SERVER_URL = 'http://localhost:3001/secrets.json'; // Later: change this to the deployed URL
+import FlightGallery from './FlightGallery';
+
+const SERVER_URL = 'http://localhost:3001/flights.json'; // Later: change this to the deployed URL
 
 class BurningAirlines extends Component {
     constructor() {
@@ -39,3 +41,5 @@ class BurningAirlines extends Component {
         )
     }
 }
+
+export default BurningAirlines
