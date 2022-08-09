@@ -3,7 +3,7 @@ class CreateAirplanes < ActiveRecord::Migration[5.2]
     create_table :airplanes do |t|
       t.text :name
       t.text :rows
-      t.text :column
+      t.text :columns
 
       t.timestamps
     end
