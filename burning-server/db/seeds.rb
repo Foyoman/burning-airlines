@@ -1,11 +1,11 @@
-Airplanes.destroy_all
+Airplane.destroy_all
 a1 = Airplane.create :name => 'Piston Aircraft', :rows => '30', :columns => '6'  
 a2 = Airplane.create :name => 'Narrow Body Aircraft', :rows => '30', :columns => '6'
 a3 = Airplane.create :name => 'Turboprop Aircraft', :rows => '30', :columns => '6'
 a4 = Airplane.create :name => 'Malayasian Aircraft', :rows => '30', :columns => '6'
 a5 = Airplane.create :name => 'Osama Was An Actor', :rows => '30', :columns =>'6'
 
-Users.destroy_all
+User.destroy_all
 
 u1 = User.create :email => 'EddieGrugrer@gmail.com', :password => 'chicken', :admin => true 
 u2 = User.create :email => 'GuillyWilly@gmail.com', :password => 'chicken'
@@ -15,7 +15,7 @@ u5 = User.create :email => 'JoeTurnsBull@gmail.com', :password => 'chicken', :ad
 
 puts "#{ User.count } users"
 
-Flights.destroy_all 
+Flight.destroy_all 
 
 f1 = Flight.create :flight_number => 'E267', :origin => 'Australia', :destination => 'South Sudan', :date => Time.new
 f2 = Flight.create :flight_number => 'C69', :origin => 'Australia', :destination => 'Brazil', :date => Time.new
