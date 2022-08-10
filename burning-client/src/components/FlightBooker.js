@@ -62,7 +62,8 @@ _handleSubmit (e) {
             "marginTop":  "10px",
             "fontFamily": "'Nunito', sans-serif",
             "padding": "5px 15px 5px 15px",
-            "border": "none"
+            "border": "none",
+            "cursor": "pointer"            
         }}/>
       </form>
     )
@@ -92,7 +93,7 @@ class FlightDisplay extends Component {
         return (
             <div>
                 <div className="FlightDisplay"><h2>Available Flights</h2>
-                    <table>
+                    <table style={{width: "100%"}}>
                         <tbody>
                             <tr>
                             <td><h3 className="tableHeading">Origin</h3></td>
@@ -113,7 +114,8 @@ class FlightDisplay extends Component {
                                 "marginTop":  "10px",
                                 "fontFamily": "'Nunito', sans-serif",
                                 "padding": "5px 15px 5px 15px",
-                                "border": "none"
+                                "border": "none",
+                                "cursor": "pointer"
                             }}/>
                             </form></td>
                             </tr>
@@ -189,7 +191,11 @@ class SeatMap extends Component {
             <div className="plane">
               { this.state.seats.map((s) =>  {
                 return (
-                  <div onClick={ this.state.occupied.includes(s.seat_number) ? "" : this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) || this.state.selectedSeat == s.seat_number ? "seat occupied" : "seat"}>
+                  <div 
+                    onClick={ this.state.occupied.includes(s.seat_number) ? "" : this._handleChange } 
+                    id={ s.seat_number } 
+                    key={ s.id } 
+                    className={ this.state.occupied.includes(s.seat_number) || this.state.selectedSeat == s.seat_number || this.state.success ? "seat occupied" : "seat" }>
                     <p>{ s.seat_number }</p>
                   </div>
                 )

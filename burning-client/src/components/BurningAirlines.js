@@ -66,7 +66,6 @@ class BurningAirlines extends Component {
                     flights={ this.state.flights }
                     airplanes={ this.state.airplanes } 
                 />
-                <FlightSearch />
             </div>
         )
     }
