@@ -11,7 +11,7 @@ const FlightGallery = (props) => {
     return (
         <div>
             <h2>{ props.flights.length } Burning Flights</h2>
-            <table>
+            <table style={{width: "100%"}}>
                 <thead>
                     <tr>
                     <th>Flight number</th>

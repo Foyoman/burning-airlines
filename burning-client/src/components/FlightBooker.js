@@ -142,7 +142,7 @@ class FlightDisplay extends Component {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const SERVER_URL2 = 'https://flaming-airlines.herokuapp.com/flight_users.json'
+const SERVER_URL2 = 'http://localhost:3001/flights.json'
 
 // get the entire seatmap data from the server via axios .
 // display the data in seatMap
@@ -235,9 +235,10 @@ class SeatMap extends Component {
           </div>
 
           <div className="seatMap">
-              {/*this.state.occupied.map((s) => <div onClick={this._handleChange} id={s} key={s} className='seat'><p>{s}</p></div>)*/}
+            {/*this.state.occupied.map((s) => <div onClick={this._handleChange} id={s} key={s} className='seat'><p>{s}</p></div>)*/}
 
-              {/* { this.state.seats.map((s) => <div onClick={this._handleChange} id={s} key={s} className={this.state.occupied.includes(s.seat_number.toString()) ? "seat" : "seat seatBlue"}><p>{s}</p></div>) } */}
+            {/* { this.state.seats.map((s) => <div onClick={this._handleChange} id={s} key={s} className={this.state.occupied.includes(s.seat_number.toString()) ? "seat" : "seat seatBlue"}><p>{s}</p></div>) } */}
+            <div className="plane">
               { this.state.seats.map((s) =>  {
                 return (
                   <div onClick={ this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) ? "seat" : "seat seatBlue" }>
@@ -245,7 +246,7 @@ class SeatMap extends Component {
                   </div>
                 )
               })}
-
+            </div>
           </div>
         </div>
       );

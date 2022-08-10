@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities; */
 
+body {
+    margin: 0;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -32,6 +36,39 @@ li a:hover {
 @tailwind utilities; 
 */
 
+.plane {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    max-height: 66em;
+    background-image: url('http://cdn.onlinewebfonts.com/svg/img_536969.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .seat {
+    max-width: 1em;
+    display: flex;
+    justify-content: center;
+    transition: all 0.2s;
+    color: grey;
+    border: 1px solid black;
+    padding: 0 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.662);
+}
+
+.seat:hover {
+    background-color: lavender;
+}
+
+.seatBlue {
     color: blue;
+}
+
+#root {
+    background-color: white;
+    max-width: 960px;
+    margin: 0 auto;
 }
