@@ -4,10 +4,10 @@ u2 = User.create :email => 'GuillyWilly@gmail.com', :password => 'chicken'
 u3 = User.create :email =>'CJ.Adlay@gmail.com', :password  => 'chicken', :admin => true
 
 Airplane.destroy_all
-a1 = Airplane.create :name => 'Piston Aircraft', :rows => 30, :columns => 6  
-a2 = Airplane.create :name => 'Narrow Body Aircraft', :rows => 30, :columns => 6
-a3 = Airplane.create :name => 'Turboprop Aircraft', :rows => 30, :columns => 6
-a4 = Airplane.create :name => 'Malayasian Aircraft', :rows => 30, :columns => 6
+a1 = Airplane.create :name => 'BF 109', :rows => 30, :columns => 6  
+a2 = Airplane.create :name => 'Narrow Body 420', :rows => 30, :columns => 6
+a3 = Airplane.create :name => 'David Boeing 777', :rows => 30, :columns => 6
+a4 = Airplane.create :name => 'Bang Airbus 69', :rows => 30, :columns => 6
 a5 = Airplane.create :name => 'Osama Was An Actor', :rows => 30, :columns => 6
 puts "#{ Airplane.count } airplanes"
 
@@ -20,11 +20,11 @@ u5 = User.create :email => 'JoeTurnsBull@gmail.com', :password => 'chicken', :ad
 puts "#{ User.count } users"
 
 Flight.destroy_all 
-f1 = Flight.create :flight_number => 'E26', :origin => 'Australia', :destination => 'South Sudan', :date => Time.new
-f2 = Flight.create :flight_number => 'C69', :origin => 'Australia', :destination => 'Brazil', :date => Time.new
-f3 = Flight.create :flight_number => 'T56', :origin => 'Australia', :destination => 'Germany', :date => Time.new
-f4 = Flight.create :flight_number => 'P74', :origin => 'Syria', :destination => 'United States of America', :date => Time.new
-f5 = Flight.create :flight_number => 'Q22', :origin => 'Canada', :destination => 'France', :date => Time.new
+f1 = Flight.create :flight_number => 'E26', :origin => 'MEL', :destination => 'SUD', :date => Time.new
+f2 = Flight.create :flight_number => 'C69', :origin => 'SYD', :destination => 'GRU', :date => Time.new
+f3 = Flight.create :flight_number => 'T56', :origin => 'SYD', :destination => 'CGN', :date => Time.new
+f4 = Flight.create :flight_number => 'P74', :origin => 'DAM', :destination => 'JFK', :date => Time.new
+f5 = Flight.create :flight_number => 'Q22', :origin => 'YQB', :destination => 'PAR', :date => Time.new
 puts "#{ Flight.count } flights"
 
 a1.flights << f3
