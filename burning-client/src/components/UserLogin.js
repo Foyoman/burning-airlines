@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class UserLogin extends Component {
     state = {
@@ -55,7 +56,7 @@ class UserLogin extends Component {
                             onChange={ this._handleChangeEmail }
                         />
                     </div>
-                    <input type="submit" value="Login" />
+                    <Link to="/Search"><input type="submit" value="Login" /></Link> 
                 </form>
             </div>
         );
