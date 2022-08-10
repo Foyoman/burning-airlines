@@ -4,9 +4,10 @@ import axios from 'axios';
 import FlightGallery from './FlightGallery';
 import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
+import UserLogin from './UserLogin';
 
 
-const SERVER_URL = 'http://localhost:3001/flights.json'; // Later: change this to the deployed URL
+const SERVER_URL = 'http://localhost:3001/'; // Later: change this to the deployed URL
 
 class BurningAirlines extends Component {
     constructor() {
@@ -21,13 +22,13 @@ class BurningAirlines extends Component {
 
     componentDidMount() {
         const fetchFlights = () => {
-            axios(SERVER_URL).then((response) => {
+            axios(SERVER_URL + 'flights.json').then((response) => {
                 this.setState({flights: response.data});
             });
             setTimeout(fetchFlights, 4000);
         };
         const fetchAirplanes = () => {
-            axios(SERVER_URL).then((response) => {
+            axios(SERVER_URL + 'airplanes.json').then((response) => {
                 this.setState({airplanes: response.data});
             });
             setTimeout(fetchAirplanes, 4000);
@@ -56,6 +57,7 @@ class BurningAirlines extends Component {
                 <FlightGallery flights={ this.state.flights } />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
                 <FlightSearch />
+                <UserLogin />
             </div>
         )
     }
