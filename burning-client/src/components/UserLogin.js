@@ -1,43 +1,30 @@
 import React, { Component } from 'react';
-import axios from "axios";
-import { Link } from "react-router-dom";
+import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 class UserLogin extends Component {
-    state = {
-        allUsers: [],
-        userName: '',
-        userEmail: ''
-    };
-
-    componentDidMount() {
-        const SERVER_URL = `http://localholst:3000/`;
-        axios.get(`${ SERVER_URL }.users.json`).then((res) => {
-            const allUsers = res.data;
-            this.setState({ allUsers });
-        });
+  constructor(props) {
+    super(props);
+    this.state = { 
+        username: '',
+        email: '',
+        password: '',
+        errors: ''
+        };
     }
-
-    _handleSubmit = (event) => {
-        event.preventDefault();
-        const users = this.state.allUsers;
-        const currentUser = this.state.userName;
-        const currentEmail = this.state.userEmail;
-        let isAUser = users.find(
-            (user) => user.name === currentUser && user.email === currentEmail
-        );
-        if (!isAUser.is_admin) window.location.href = "http://localhost:3001/home";
-        if (isAUser.is_admin) window.location.href = "http://localhost:3001/admin";
+    handleChange = (event) => {
+        const {name, value} = event.target
+        this.setState({
+        [name]: value
+        })
     };
 
-    _handleChangeName = (event) => {
-        this.setState({ userName: event.target.value });
+    handleSubmit = (event) => {
+        event.preventDefault()
     };
-
-    _handleChangeEmail = (event) => {
-        this.setState({ userEmail: event.target.value });
-    }
 
     render() {
+<<<<<<< HEAD
         return(
             <div class=" md:container md:mx-auto min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 
@@ -63,9 +50,45 @@ class UserLogin extends Component {
                              value="Login" /> 
                         </Link> 
                 </form>
+=======
+        const {username, email, password} = this.state
+        return (
+        <div>
+            <h1>Log In</h1>        
+            <form onSubmit={this.handleSubmit}>
+                <input
+                placeholder="username"
+                type="text"
+                name="username"
+                value={username}
+                onChange={this.handleChange}
+                />
+                <input
+                placeholder="email"
+                type="text"
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+                />
+                <input
+                placeholder="password"
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+                />         
+            <button placeholder="submit" type="submit">
+                Log In
+            </button>
+
+            <div>
+                or <Link to='/signup'>sign up</Link>
+>>>>>>> 572843f0994b5d9235f71a60ac9485ee50600ee7
             </div>
+        </form>
+        </div>
         );
     }
-};
+}
 
 export default UserLogin;
