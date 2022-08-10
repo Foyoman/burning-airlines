@@ -5,7 +5,7 @@ import FlightGallery from './FlightGallery';
 import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
 // import UserLogin from './UserLogin';
-import FlightReserver from './FlightReserver';
+import FlightBooker from './FlightBooker';
 
 
 const SERVER_URL = 'http://localhost:3001/'; // Later: change this to the deployed URL
@@ -25,13 +25,13 @@ class BurningAirlines extends Component {
         const fetchFlights = () => {
             axios(SERVER_URL + 'flights.json').then((response) => {
                 this.setState({flights: response.data});
-            });
+            }); // .then(() => {debugger});
             setTimeout(fetchFlights, 4000);
         };
         const fetchAirplanes = () => {
             axios(SERVER_URL + 'airplanes.json').then((response) => {
                 this.setState({airplanes: response.data});
-            }); // .then(() => {debugger});
+            });
             setTimeout(fetchAirplanes, 4000);
         }
 
@@ -57,12 +57,11 @@ class BurningAirlines extends Component {
                 <h1>Burning Airlines</h1>
                 <FlightGallery 
                     flights={ this.state.flights }
-                    airplanes={ this.state.airplanes } 
                 />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
                 {/* <FlightSearch /> */}
                 {/* <UserLogin /> */}
-                <FlightReserver 
+                <FlightBooker 
                     flights={ this.state.flights }
                     airplanes={ this.state.airplanes } 
                 />

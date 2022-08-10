@@ -5,9 +5,9 @@ const FlightGallery = (props) => {
     // const f_airplane = function (airplane) {
     //     return airplane.id === f.airplane_id
     // }
-    props.flights.map((f) => {
-        f.airplane = _(props.airplanes).find({ id: f.airplane_id })
-    })
+    // props.flights.map((f) => {
+    //     f.airplane = _(props.airplanes).find({ id: f.airplane_id })
+    // })
     return (
         <div>
             <h2>{ props.flights.length } Burning Flights</h2>
@@ -34,8 +34,8 @@ const FlightGallery = (props) => {
                                 <td>{ f.origin }</td>
                                 <td>{ f.destination }</td>
                                 <td>{ f.date }</td>
-                                <td>{ f.airplane ? f.airplane.name : '' }</td>
-                                <td>{ f.airplane ? f.airplane.rows * f.airplane.columns : 0 }</td>
+                                <td>{ f.airplane.name }</td>
+                                <td>{ f.seats.length }</td>
                             </tr>
                         )
                     })}
