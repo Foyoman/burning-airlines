@@ -8,6 +8,8 @@ class FlightsController < ApplicationController
 
   # GET /flights/1 or /flights/1.json
   def show
+    # flight = Flight.find params[:id]
+    # seats = flight.seats
   end
 
   # GET /flights/new

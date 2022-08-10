@@ -31,7 +31,7 @@ class BurningAirlines extends Component {
         const fetchAirplanes = () => {
             axios(SERVER_URL + 'airplanes.json').then((response) => {
                 this.setState({airplanes: response.data});
-            }); // .then(() => {debugger});
+            }); //.then(() => {debugger});
             setTimeout(fetchAirplanes, 4000);
         }
 
@@ -57,7 +57,6 @@ class BurningAirlines extends Component {
                 <h1>Burning Airlines</h1>
                 <FlightGallery 
                     flights={ this.state.flights }
-                    airplanes={ this.state.airplanes } 
                 />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
                 {/* <FlightSearch /> */}
