@@ -14,6 +14,7 @@
     <%= link_to 'airplanes', airplanes_path %>
     <%= link_to 'flights', flights_path %>
     <%= link_to 'reservations', reservations_path %>
+    <%# link_to 'users', users_path  %>
     <% if @current_user.present? %>
       <%= link_to "logout", login_path, :method => 'delete' %>
     <% else%>
