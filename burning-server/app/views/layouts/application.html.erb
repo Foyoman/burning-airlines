@@ -17,7 +17,7 @@
     <% if @current_user.present? %>
       <%= link_to "logout", login_path, :method => 'delete' %>
     <% else%>
-      <%= link_to 'sign up', new_user_path %>
+      <%# link_to 'sign up', new_user_path %>
       <%= link_to 'sign in', login_path %>
     <% end %>
   </nav>
