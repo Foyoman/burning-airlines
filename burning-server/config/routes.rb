@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  resources :seats
   root :to => 'pages#home'
-
+  
+  resources :seats
   resources :flights
   resources :airplanes
   resources :reservations
+  resources :users
 
-  resources :users, only: [:new, :create]
    get 'login', to: 'sessions#new'
    post 'login', to: 'sessions#create'
    get 'welcome', to: 'sessions#welcome' 
