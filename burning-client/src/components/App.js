@@ -12,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="flights" element={<BurningAirlines />} />
+          <Route path="flights" element={<BurningAirlines class="BurningAirlines" />} />
           <Route path="search" element={<FlightSearch />} />
           <Route path="airplanes" element={<AirplaneGallery />} />
         </Route>
