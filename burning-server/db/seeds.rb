@@ -20,9 +20,15 @@ u5 = User.create :email => 'JoeTurnsBull@gmail.com', :password => 'chicken', :ad
 puts "#{ User.count } users"
 
 Flight.destroy_all 
-f1 = Flight.create :flight_number => 'E26', :origin => 'Australia', :destination => 'South Sudan', :date => Time.new, :airplane_id => a4.id
-f2 = Flight.create :flight_number => 'C69', :origin => 'Australia', :destination => 'Brazil', :date => Time.new, :airplane_id => a2.id
-f3 = Flight.create :flight_number => 'T56', :origin => 'Australia', :destination => 'Germany', :date => Time.new, :airplane_id => a1.id
-f4 = Flight.create :flight_number => 'P74', :origin => 'Syria', :destination => 'United States of America', :date => Time.new, :airplane_id => a5.id
-f5 = Flight.create :flight_number => 'Q22', :origin => 'Canada', :destination => 'France', :date => Time.new, :airplane_id => a3.id
+f1 = Flight.create :flight_number => 'E26', :origin => 'Australia', :destination => 'South Sudan', :date => Time.new
+f2 = Flight.create :flight_number => 'C69', :origin => 'Australia', :destination => 'Brazil', :date => Time.new
+f3 = Flight.create :flight_number => 'T56', :origin => 'Australia', :destination => 'Germany', :date => Time.new
+f4 = Flight.create :flight_number => 'P74', :origin => 'Syria', :destination => 'United States of America', :date => Time.new
+f5 = Flight.create :flight_number => 'Q22', :origin => 'Canada', :destination => 'France', :date => Time.new
 puts "#{ Flight.count } flights"
+
+a1.flights << f3
+a2.flights << f2
+a3.flights << f5    
+a4.flights << f1
+a5.flights << f4
