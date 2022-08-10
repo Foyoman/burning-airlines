@@ -1,21 +1,27 @@
 import BurningAirlines from './BurningAirlines';
-<<<<<<< HEAD
-=======
+
+
 import FlightSearch from './FlightSearch';
 import UserLogin from './UserLogin';
->>>>>>> 42bccddec51be4e6b66fbe361abca5df82a1a0b2
+
 
 function App() {
   return (
-    <div className="App">
+    <div className='container mx-auto bg-gray-200 rounded-xl shadow border p-8 m-10'>
+      <p className ='text-3xl text-gray-700 font-bold mb-5' > 
+      Welcome To Burning Airlines !!
+     </p>
+     
       <BurningAirlines />
-<<<<<<< HEAD
-=======
+
+
       <FlightSearch />
       <UserLogin />
->>>>>>> 42bccddec51be4e6b66fbe361abca5df82a1a0b2
+
     </div>
   );
 }
 
 export default App;
+
+
