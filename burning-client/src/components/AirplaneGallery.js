@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const AirplaneGallery = (props) => {
     return (
@@ -10,7 +10,7 @@ const AirplaneGallery = (props) => {
                     <tr>
                     <th>Airplane name</th>
                     <th>Capacity</th>
-                    <th colspan="2"></th>
+                    <th colSpan="2"></th>
                     </tr>
                 </thead>
             

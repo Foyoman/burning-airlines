@@ -6,6 +6,7 @@ import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
 // import UserLogin from './UserLogin';
 import FlightBooker from './FlightBooker';
+import _ from 'lodash';
 
 
 const SERVER_URL = 'http://localhost:3001/'; // Later: change this to the deployed URL
