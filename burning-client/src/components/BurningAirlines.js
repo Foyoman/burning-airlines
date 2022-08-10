@@ -4,7 +4,7 @@ import axios from 'axios';
 import FlightGallery from './FlightGallery';
 import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
-import UserLogin from './UserLogin';
+// import UserLogin from './UserLogin';
 import FlightReserver from './FlightReserver';
 
 
@@ -66,6 +66,7 @@ class BurningAirlines extends Component {
                     flights={ this.state.flights }
                     airplanes={ this.state.airplanes } 
                 />
+                <FlightSearch />
             </div>
         )
     }
