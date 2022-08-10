@@ -9,11 +9,8 @@ const AirplaneGallery = (props) => {
                 <thead>
                     <tr>
                     <th>Airplane name</th>
-                    <th>Number of seats</th>
-                    <th>Destination</th>
-                    <th>Date</th>
-                    <th>Airplane</th>
-                    <th colspan="5"></th>
+                    <th>Capacity</th>
+                    <th colspan="2"></th>
                     </tr>
                 </thead>
             
@@ -24,8 +21,7 @@ const AirplaneGallery = (props) => {
                         return (
                             <tr key={ a.id }>
                                 <td>{ a.name }</td>
-                                <td>{ a.rows }</td>
-                                <td>{ a.columns }</td>
+                                <td>{ a.rows * a.columns }</td>
                             </tr>
                         )
                     })}
