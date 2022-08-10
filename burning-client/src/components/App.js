@@ -1,22 +1,22 @@
-import React, { PureComponent as Component } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Layout";
+import Home from "./Home";
 import BurningAirlines from './BurningAirlines';
-import UserLogin from './UserLogin';
-// import SelectSeat from './SelectSeat';
+import AirplaneGallery from './AirplaneGallery';
+import FlightSearch from './FlightSearch';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <div><UserLogin /></div>
-        <div><BurningAirlines /></div>
-      </div>
-
-    );
-  }
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="flights" element={<BurningAirlines />} />
+          <Route path="search" element={<FlightSearch />} />
+          <Route path="airplanes" element={<AirplaneGallery />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App;
