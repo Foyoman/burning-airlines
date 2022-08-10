@@ -5,6 +5,7 @@ import FlightGallery from './FlightGallery';
 import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
 import UserLogin from './UserLogin';
+import FlightReserver from './FlightReserver';
 
 
 const SERVER_URL = 'http://localhost:3001/'; // Later: change this to the deployed URL
@@ -59,8 +60,12 @@ class BurningAirlines extends Component {
                     airplanes={ this.state.airplanes } 
                 />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
-                <FlightSearch />
-                <UserLogin />
+                {/* <FlightSearch /> */}
+                {/* <UserLogin /> */}
+                <FlightReserver 
+                    flights={ this.state.flights }
+                    airplanes={ this.state.airplanes } 
+                />
             </div>
         )
     }
