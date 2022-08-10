@@ -1,6 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
+// import _ from 'lodash';
 // import PropTypes from 'prop-types';
 
 const SERVER_URL = 'http://localhost:3001/flights.json'; // We still haven't fixed the backend to allow us to assign a plane to a flight
@@ -133,7 +134,7 @@ class FlightDisplay extends Component {
                 </div>
                 {/* { flight = _(this.state.flights).find({ id: this.state.flight_id }) ) } */}
                 {/* {this.state.flight_id ? <SeatMap flight={ this.props.flights.find({ id: this.state.flight_id }) } /> : ""} */}
-                {this.state.flight_id ? <SeatMap flights={this.props.flights} /> : ""}
+                {this.state.flight_id ? <SeatMap flights={this.props.flights} flight_id={this.state.flight_id} /> : ""}
             </div>
             // f.airplane = _(props.airplanes).find({ id: f.airplane_id }
         )
@@ -142,7 +143,7 @@ class FlightDisplay extends Component {
 
 ////////////////////////////////////////////////////////////////////////////////
 
-const SERVER_URL2 = 'http://localhost:3001/flights.json'
+const SERVER_URL2 = 'http://localhost:3001/reservations.json'
 
 // get the entire seatmap data from the server via axios .
 // display the data in seatMap
@@ -155,10 +156,11 @@ class SeatMap extends Component {
   constructor(props){
     super(props);
     this.state = {
-      seats: props.flights[0].seats,
+      seats: this.props.flights[0].seats,
       // seats: [],
-      selectedSeat: '',
-      occupied: [],
+      selectedSeat: '', // "A1"
+      occupied: _.map(this.props.flights[0].reservations, 'seat_number'),
+      available: _.reject(this.props.flights[0].seats, (s) => _.map(this.props.flights[0].reservations, 'seat_number').includes(s.seat_number)),
       success:'',
       selected: false
       // flight_id: this.props.flight_id
@@ -170,53 +172,52 @@ class SeatMap extends Component {
 
 
     const fetchSeats = () => { // fat arrow functions do not break the conenction to this
-      axios.get(SERVER_URL2).then(results => this.setState({occupied: results.data.map(item => item.seat)}))
-      setTimeout(fetchSeats, 400000); //
+      axios.get(SERVER_URL2).then(response => this.setState({occupied: response.data.map(reservation => reservation.seat_number)}))
+      setTimeout(fetchSeats, 4000); //
     }
     fetchSeats();
-   }
+  }
 
   fetchSeats(){ // fat arrow functions do not break the conenction to this
+    // axios.get(SERVER_URL2).then(response => this.setState({occupied: response.data.map(reservation => reservation.seat_number)}))
+    // setTimeout(this.fetchSeats, 40000); // recursion change this back to 4sec
+    this.state({ occupied: [...this.state.occupied, this.state.selectedSeat]});
+    setTimeout(this.fetchSeats, 4000);
+  };
 
-     axios.get(SERVER_URL2).then(results => this.setState({occupied: results.data.map(item => item.seat)}))
-     setTimeout(this.fetchSeats, 40000); // recursion change this back to 4sec
-   };
 
-
-   _handleChange(e){
+  _handleChange(e){
     this.setState({ selectedSeat: e.currentTarget.id });
     this.setState({ occupied: [...this.state.occupied, e.currentTarget.id] })
     console.log( this.state.selectedSeat );
 
     // const newTransform = this.state.selected === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
     this.setState({ selected: !this.state.selected })
+  };
 
- };
-
-   showOccupied(e){
-     e.preventDefault();
-     this.fetchSeats();
-     console.log(this.state.occupied);
-
-   }
+  showOccupied(e){
+    e.preventDefault();
+    this.fetchSeats();
+    console.log(this.state.occupied);
+  };
 
   saveSeat(e){
-     e.preventDefault();
-     console.log('sending post');
-     this.setState({success: 'Your Seat Has Been Successfully Booked!'});
+    e.preventDefault();
+    console.log('sending post');
+    this.setState({success: 'Your Seat Has Been Successfully Booked!'});
 
-     // this.state.secret.push(s); // Mutation never mutate arrays!!
-     // this.setState({secrets: [...this.state.secrets,s]});
-     axios.post(SERVER_URL2, {
-       seat: this.state.selectedSeat,
-       user_id: 6,
-       flight_id: this.props.flight_id,
-     }).then(response => {
+    // this.state.secret.push(s); // Mutation never mutate arrays!!
+    // this.setState({secrets: [...this.state.secrets,s]});
+    axios.post(SERVER_URL2, {
+      seat_number: this.state.selectedSeat, // "A1"
+      user_id: 6,
+      flight_id: this.props.flight_id,
+    }).then(response => {
       console.log(response)
-     })
-     .catch(error => {
-         console.log(error.response)
-     });
+    })
+    .catch(error => {
+      console.log(error.response)
+    });
   };
 
     render() {
@@ -241,7 +242,7 @@ class SeatMap extends Component {
             <div className="plane">
               { this.state.seats.map((s) =>  {
                 return (
-                  <div onClick={ this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) ? "seat" : "seat seatBlue" }>
+                  <div onClick={ this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) ? "seat occupied" : "seat" }>
                     <p>{ s.seat_number }</p>
                   </div>
                 )

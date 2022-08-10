@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import _ from 'lodash';
 
 const FlightGallery = (props) => {
     // const f_airplane = function (airplane) {
@@ -20,7 +19,7 @@ const FlightGallery = (props) => {
                     <th>Date</th>
                     <th>Airplane</th>
                     <th>Available Seats</th>
-                    <th colspan="6"></th>
+                    <th colSpan="6"></th>
                     </tr>
                 </thead>
             
@@ -35,7 +34,7 @@ const FlightGallery = (props) => {
                                 <td>{ f.destination }</td>
                                 <td>{ f.date }</td>
                                 <td>{ f.airplane.name }</td>
-                                <td>{ f.seats.length }</td>
+                                <td>{ f.seats.length - f.reservations.length }</td>
                             </tr>
                         )
                     })}
