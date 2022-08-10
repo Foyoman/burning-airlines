@@ -2,9 +2,8 @@ import React, { PureComponent as Component } from 'react';
 import axios from 'axios';
 import _ from 'lodash';
 // import _ from 'lodash';
-// import PropTypes from 'prop-types';
 
-const SERVER_URL = 'http://localhost:3001/flights.json'; // We still haven't fixed the backend to allow us to assign a plane to a flight
+const SERVER_URL = 'http://localhost:3001/flights.json'; 
 
 class FlightSearchForm extends Component {
   constructor(props) {
@@ -71,10 +70,6 @@ _handleSubmit (e) {
 
 }
 
-// FlightSearchForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired
-// }
-
 class FlightDisplay extends Component {
     constructor(props) {
         super(props);
@@ -91,12 +86,7 @@ class FlightDisplay extends Component {
         console.log(flight_id);
         this.setState({ flight_id });
         this.props.passFlightId(flight_id);
-    } //
-    // pass to child as prop
-    // parent
-    // pass from parent to child by passing a function
-    // we now have the flight_id in the FlightDisplay (gallery) component's state.
-    // Need to pass this to the booking form - but making calling this.props.flight_id
+    } 
 
     render() {
         return (
@@ -132,11 +122,8 @@ class FlightDisplay extends Component {
                     </table>
 
                 </div>
-                {/* { flight = _(this.state.flights).find({ id: this.state.flight_id }) ) } */}
-                {/* {this.state.flight_id ? <SeatMap flight={ this.props.flights.find({ id: this.state.flight_id }) } /> : ""} */}
-                {this.state.flight_id ? <SeatMap flights={this.props.flights} flight_id={this.state.flight_id} /> : ""}
+                {this.state.flight_id ? <SeatMap flight={this.props.flights[0]} /> : ""}
             </div>
-            // f.airplane = _(props.airplanes).find({ id: f.airplane_id }
         )
     }
 }
@@ -145,60 +132,25 @@ class FlightDisplay extends Component {
 
 const SERVER_URL2 = 'http://localhost:3001/reservations.json'
 
-// get the entire seatmap data from the server via axios .
-// display the data in seatMap
-// show which seats are taken and which are not live via polling
-// onclick user can select seat id. show selected seat in the dom.
-// when user clicks select seat. chosen seat id is sent to the database as not available anymore.
-
-
 class SeatMap extends Component {
   constructor(props){
     super(props);
     this.state = {
-      seats: this.props.flights[0].seats,
-      // seats: [],
+      seats: this.props.flight.seats,
       selectedSeat: '', // "A1"
-      occupied: _.map(this.props.flights[0].reservations, 'seat_number'),
-      available: _.reject(this.props.flights[0].seats, (s) => _.map(this.props.flights[0].reservations, 'seat_number').includes(s.seat_number)),
+      occupied: _.map(this.props.flight.reservations, 'seat_number'),
+      available: _.reject(this.props.flight.seats, (s) => _.map(this.props.flight.reservations, 'seat_number').includes(s.seat_number)),
       success:'',
       selected: false
-      // flight_id: this.props.flight_id
     }
     this._handleChange = this._handleChange.bind(this);
     this.saveSeat = this.saveSeat.bind(this);
-    this.showOccupied = this.showOccupied.bind(this);
-    this.fetchSeats = this.fetchSeats.bind(this);
-
-
-    const fetchSeats = () => { // fat arrow functions do not break the conenction to this
-      axios.get(SERVER_URL2).then(response => this.setState({occupied: response.data.map(reservation => reservation.seat_number)}))
-      setTimeout(fetchSeats, 4000); //
-    }
-    fetchSeats();
   }
-
-  fetchSeats(){ // fat arrow functions do not break the conenction to this
-    // axios.get(SERVER_URL2).then(response => this.setState({occupied: response.data.map(reservation => reservation.seat_number)}))
-    // setTimeout(this.fetchSeats, 40000); // recursion change this back to 4sec
-    this.state({ occupied: [...this.state.occupied, this.state.selectedSeat]});
-    setTimeout(this.fetchSeats, 4000);
-  };
-
 
   _handleChange(e){
     this.setState({ selectedSeat: e.currentTarget.id });
-    this.setState({ occupied: [...this.state.occupied, e.currentTarget.id] })
     console.log( this.state.selectedSeat );
-
-    // const newTransform = this.state.selected === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
     this.setState({ selected: !this.state.selected })
-  };
-
-  showOccupied(e){
-    e.preventDefault();
-    this.fetchSeats();
-    console.log(this.state.occupied);
   };
 
   saveSeat(e){
@@ -206,12 +158,10 @@ class SeatMap extends Component {
     console.log('sending post');
     this.setState({success: 'Your Seat Has Been Successfully Booked!'});
 
-    // this.state.secret.push(s); // Mutation never mutate arrays!!
-    // this.setState({secrets: [...this.state.secrets,s]});
     axios.post(SERVER_URL2, {
       seat_number: this.state.selectedSeat, // "A1"
       user_id: 6,
-      flight_id: this.props.flight_id,
+      flight_id: this.props.flight.id,
     }).then(response => {
       console.log(response)
     })
@@ -230,19 +180,16 @@ class SeatMap extends Component {
               <p><span>Selected Seat: {this.state.selectedSeat}</span></p>
               <p className="successMsg">{this.state.success}</p>
               <button onClick={this.saveSeat}>Book</button>
-              {/* <button onClick={this.showOccupied}>show occupied</button> */}
             </form>
 
           </div>
 
           <div className="seatMap">
-            {/*this.state.occupied.map((s) => <div onClick={this._handleChange} id={s} key={s} className='seat'><p>{s}</p></div>)*/}
 
-            {/* { this.state.seats.map((s) => <div onClick={this._handleChange} id={s} key={s} className={this.state.occupied.includes(s.seat_number.toString()) ? "seat" : "seat seatBlue"}><p>{s}</p></div>) } */}
             <div className="plane">
               { this.state.seats.map((s) =>  {
                 return (
-                  <div onClick={ this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) ? "seat occupied" : "seat" }>
+                  <div onClick={ this.state.occupied.includes(s.seat_number) ? "" : this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) || this.state.selectedSeat == s.seat_number ? "seat occupied" : "seat"}>
                     <p>{ s.seat_number }</p>
                   </div>
                 )
@@ -255,59 +202,38 @@ class SeatMap extends Component {
 
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
+// 
 
 class FlightBooker extends Component {
   constructor (props) {
     super(props);
     this.state = {
       flights: [],
-      flight_id: '', // To pass to reservations later on
+      flight_id: '', 
       origin: '',
       destination: ''
-    }; // We want to keep track of the available flights, and the chosen flight
+    };
     this.fetchFlights = this.fetchFlights.bind(this);
-    this.passFlightId = this.passFlightId.bind(this); // You are binding this function to the parent
-    // this.filterByOD = this.filterByOD.bind(this);
-    // fetchFlights();
+    this.passFlightId = this.passFlightId.bind(this);
   }
-  //
-  // filterByOD(item) {
-  //   if (item.origin === 'Sydney' && item.destination === 'Tuscon') {
-  //     return true;
-  //   }
-  // }
 
-  fetchFlights (o,d) { // Need to pass the origin and destination in
+  fetchFlights (o,d) { 
     console.log('preparing to fetch');
-     // console.log(this.state.origin);
 
-    // axios.get(SERVER_URL).then( results => this.setState( {flights: results.data }))
-
-     axios.get(SERVER_URL).then(function (results){
-             let flightsArr = [];
-             for (let i = 0; i<results.data.length;i++)
-               if (results.data[i].origin === o && results.data[i].destination === d)
-                 flightsArr.push(results.data[i]);
-             this.setState({ flights:flightsArr });
-           }.bind(this));
-
- 
+    axios.get(SERVER_URL).then(function (results){
+      let flightsArr = [];
+      for (let i = 0; i<results.data.length;i++)
+        if (results.data[i].origin === o && results.data[i].destination === d)
+          flightsArr.push(results.data[i]);
+      this.setState({ flights:flightsArr });
+    }.bind(this));
  }
-// writing this from parent's pOV so can't use this.state.f
- passFlightId (flight_id) { // Would have thought we pass in the child's state like: this.state.flight_id as parameters but it fails to compile
-   this.setState ({ // this refers to parent
-     flight_id: flight_id // Is this just going to set the state of the child though?
+
+ passFlightId (flight_id) { 
+   this.setState ({ 
+     flight_id: flight_id
    });
  }
-// Child also needs to call this function
-
-// Think of react components like parent and child. If parent wants data from child they can just write it on a piece of paper. But if child wants something from the parent, the parent needs to give a function (phone) for the child to call and tell the parent the info
-
-// Child will be able to access the parent's data by calling this.props.propName? provided props has been passed down first
-
- // To pass state from child to parent, we need to write a function in the parent which we give to the child to run via props (like <FlightDisplay flights={this.state.flights} />  The child runs the value and passes the state in
 
   render() {
     return (
@@ -321,7 +247,5 @@ class FlightBooker extends Component {
 
   }
 }
-// when you create flightdisplay, pass in a function
-
 
 export default FlightBooker;
