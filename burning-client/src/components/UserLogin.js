@@ -39,24 +39,29 @@ class UserLogin extends Component {
 
     render() {
         return(
-            <div>
-                <h1>Login</h1>
+            <div class=" md:container md:mx-auto min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+                
                 <form onSubmit={ this._handleSubmit }>
-                    <div>
-                        <p>Name</p>
+                    <div class="max-w-md w-full space-y-8">
+                        <p class="mt-2 text-center text-sm text-orange-300" >Name</p>
                         <input
                             type="text"
                             onChange={ this._handleChangeName }
                         />
                     </div>
                     <div>
-                        <p>Email</p>
+                        <p class="mt-2 text-center text-sm text-emerald-300" >Email</p>
                         <input
                             type="text"
                             onChange={ this._handleChangeEmail }
                         />
                     </div>
-                    <Link to="/Search"><input type="submit" value="Login" /></Link> 
+                        <Link to="/Search"> 
+                         <input 
+                             type="submit" 
+                             className='w-full px-2 pb-1.5 text-primary outline-none text-base font-extra-bold rounded-md text-red-600'
+                             value="Login" /> 
+                        </Link> 
                 </form>
             </div>
         );
