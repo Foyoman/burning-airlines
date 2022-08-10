@@ -4,7 +4,6 @@ import axios from 'axios';
 import FlightGallery from './FlightGallery';
 import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
-import UserLogin from './UserLogin';
 
 
 const SERVER_URL = 'http://localhost:3001/'; // Later: change this to the deployed URL
