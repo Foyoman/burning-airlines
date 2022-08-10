@@ -1,5 +1,6 @@
 import React, { PureComponent as Component } from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 // import PropTypes from 'prop-types';
 
 const SERVER_URL = 'http://localhost:3001/flights.json'; // We still haven't fixed the backend to allow us to assign a plane to a flight
@@ -74,68 +75,69 @@ _handleSubmit (e) {
 // }
 
 class FlightDisplay extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        flights: [],
-        flight_id: ""
-    };
-    this._handleSeat = this._handleSeat.bind(this);
-}
+    constructor(props) {
+        super(props);
+        this.state = {
+            flights: [],
+            flight_id: ""
+        };
+        this._handleSeat = this._handleSeat.bind(this);
+    }
 
-_handleSeat (e) {
-  e.preventDefault();
-  let flight_id = e.target.getAttribute("id");
-  console.log(flight_id);
-  this.setState({ flight_id });
-  this.props.passFlightId(flight_id);
-} //
-// pass to child as prop
-// parent
-// pass from parent to child by passing a function
-// we now have the flight_id in the FlightDisplay (gallery) component's state.
-// Need to pass this to the booking form - but making calling this.props.flight_id
+    _handleSeat (e) {
+        e.preventDefault();
+        let flight_id = e.target.getAttribute("id");
+        console.log(flight_id);
+        this.setState({ flight_id });
+        this.props.passFlightId(flight_id);
+    } //
+    // pass to child as prop
+    // parent
+    // pass from parent to child by passing a function
+    // we now have the flight_id in the FlightDisplay (gallery) component's state.
+    // Need to pass this to the booking form - but making calling this.props.flight_id
 
-render() {
+    render() {
+        return (
+            <div>
+                <div className="FlightDisplay"><h2>Available Flights</h2>
+                    <table>
+                        <tbody>
+                            <tr>
+                            <td><h3 className="tableHeading">Origin</h3></td>
+                            <td><h3 className="tableHeading">Dest.</h3></td>
+                            <td><h3 className="tableHeading">Date</h3></td>
+                            <td><h3 className="tableHeading">Flight No.</h3></td>
+                            </tr>
+                            {this.props.flights.map((f) =>
+                            <tr>
+                            <td><p key={f.id}>{f.origin}</p></td>
+                            <td><p key={f.id}>{f.destination}</p></td>
+                            <td><p key={f.id}>{f.date}</p></td>
+                            <td><p key={f.id}>{f.flight_number}</p></td>
+                            <td><form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" style={{
+                                "background": "#1c4a7d",
+                                "color":  "white",
+                                "fontSize":  "1.2em",
+                                "marginTop":  "10px",
+                                "fontFamily": "'Nunito', sans-serif",
+                                "padding": "5px 15px 5px 15px",
+                                "border": "none"
+                            }}/>
+                            </form></td>
+                            </tr>
+                                )}
+                        </tbody>
+                    </table>
 
-    return (
-      <div><div className="FlightDisplay"><h2>Available Flights</h2>
-      <table>
-      <tbody>
-      <tr>
-      <td><h3 className="tableHeading">Origin</h3></td>
-      <td><h3 className="tableHeading">Dest.</h3></td>
-      <td><h3 className="tableHeading">Date</h3></td>
-      <td><h3 className="tableHeading">Flight No.</h3></td>
-      </tr>
-      {this.props.flights.map((f) =>
-      <tr>
-      <td><p key={f.id}>{f.origin}</p></td>
-      <td><p key={f.id}>{f.destination}</p></td>
-      <td><p key={f.id}>{f.date}</p></td>
-      <td><p key={f.id}>{f.flight_number}</p></td>
-      <td><form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" style={{
-          "background": "#1c4a7d",
-          "color":  "white",
-          "fontSize":  "1.2em",
-          "marginTop":  "10px",
-          "fontFamily": "'Nunito', sans-serif",
-          "padding": "5px 15px 5px 15px",
-          "border": "none"
-      }}/>
-    </form></td>
-      </tr>
-          )}
-      </tbody>
-      </table>
-
-    </div>
-    {this.state.flight_id ? <SeatMap flight_id={this.state.flight_id} /> : ""}
-</div>
-
-    )
-  }
-
+                </div>
+                {/* { flight = _(this.state.flights).find({ id: this.state.flight_id }) ) } */}
+                {/* {this.state.flight_id ? <SeatMap flight={ this.props.flights.find({ id: this.state.flight_id }) } /> : ""} */}
+                {this.state.flight_id ? <SeatMap flights={this.props.flights} /> : ""}
+            </div>
+            // f.airplane = _(props.airplanes).find({ id: f.airplane_id }
+        )
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -153,7 +155,7 @@ class SeatMap extends Component {
   constructor(props){
     super(props);
     this.state = {
-      seats: Array.from({length: 40}, (x,i) => i+1),
+      seats: props.flights[0].seats,
       // seats: [],
       selectedSeat: '',
       occupied: [],
@@ -182,12 +184,12 @@ class SeatMap extends Component {
 
 
    _handleChange(e){
-    this.setState({selectedSeat: e.currentTarget.id });
-    this.setState({occupied: [...this.state.occupied, e.currentTarget.id]})
-    console.log(this.state.selectedSeat);
+    this.setState({ selectedSeat: e.currentTarget.id });
+    this.setState({ occupied: [...this.state.occupied, e.currentTarget.id] })
+    console.log( this.state.selectedSeat );
 
     // const newTransform = this.state.selected === 'rotateY(180deg)' ? 'rotateY(0deg)' : 'rotateY(180deg)';
-    this.setState({selected: !this.state.selected})
+    this.setState({ selected: !this.state.selected })
 
  };
 
@@ -235,7 +237,14 @@ class SeatMap extends Component {
           <div className="seatMap">
               {/*this.state.occupied.map((s) => <div onClick={this._handleChange} id={s} key={s} className='seat'><p>{s}</p></div>)*/}
 
-              {this.state.seats.map((s) => <div onClick={this._handleChange} id={s} key={s} className={this.state.occupied.includes(s.toString()) ? "seat" : "seat seatBlue"}><p>{s}</p></div>)}
+              {/* { this.state.seats.map((s) => <div onClick={this._handleChange} id={s} key={s} className={this.state.occupied.includes(s.seat_number.toString()) ? "seat" : "seat seatBlue"}><p>{s}</p></div>) } */}
+              { this.state.seats.map((s) =>  {
+                return (
+                  <div onClick={ this._handleChange } id={ s.seat_number } key={ s.id } className={ this.state.occupied.includes(s.seat_number) ? "seat" : "seat seatBlue" }>
+                    <p>{ s.seat_number }</p>
+                  </div>
+                )
+              })}
 
           </div>
         </div>
@@ -247,7 +256,7 @@ class SeatMap extends Component {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-class FlightReserver extends Component {
+class FlightBooker extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -313,4 +322,4 @@ class FlightReserver extends Component {
 // when you create flightdisplay, pass in a function
 
 
-export default FlightReserver;
+export default FlightBooker;

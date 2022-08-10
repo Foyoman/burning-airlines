@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 
 const FlightGallery = (props) => {
+    // const f_airplane = function (airplane) {
+    //     return airplane.id === f.airplane_id
+    // }
+    // props.flights.map((f) => {
+    //     f.airplane = _(props.airplanes).find({ id: f.airplane_id })
+    // })
     return (
         <div>
             <h2>{ props.flights.length } Burning Flights</h2>
