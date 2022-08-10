@@ -1,4 +1,5 @@
 import BurningAirlines from './BurningAirlines';
+<<<<<<< HEAD
 import UserLogin from './UserLogin';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FlightSearch from './FlightSearch';
@@ -14,6 +15,14 @@ function App() {
       </Routes>
       </div>
     </BrowserRouter>
+=======
+
+function App() {
+  return (
+    <div className="App">
+      <BurningAirlines />
+    </div>
+>>>>>>> c309f6dca0f155e2e82193ecb2f7d5cedc898945
   );
 }
 
