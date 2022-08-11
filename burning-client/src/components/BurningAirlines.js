@@ -60,8 +60,6 @@ class BurningAirlines extends Component {
                     flights={ this.state.flights }
                 />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
-                {/* <FlightSearch /> */}
-                {/* <UserLogin /> */}
                 <FlightBooker 
                     flights={ this.state.flights }
                     airplanes={ this.state.airplanes } 

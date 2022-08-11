@@ -4,7 +4,7 @@ import Layout from "./Layout";
 import Home from "./Home";
 import BurningAirlines from './BurningAirlines';
 import AirplaneGallery from './AirplaneGallery';
-import FlightSearch from './FlightSearch';
+import FlightBooker from './FlightBooker';
 
 export default function App() {
   return (
@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="flights" element={<BurningAirlines class="BurningAirlines" />} />
-          <Route path="search" element={<FlightSearch />} />
+          <Route path="search" element={<FlightBooker />} />
           <Route path="airplanes" element={<AirplaneGallery />} />
         </Route>
       </Routes>

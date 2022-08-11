@@ -32,40 +32,41 @@ _handleSubmit (e) {
 
   render() {
     return (
+<<<<<<< HEAD
       <form className="searchForm" onSubmit={ this._handleSubmit }>
         <h2>Seach for Flights</h2>
+=======
+      <div id="search-form">
+        <form className="searchForm" onSubmit={ this._handleSubmit }>
+          <h2>Find Flights</h2>
+>>>>>>> addbc1931ce1ce26bb2783cadcb1dedc825f0d5a
 
-        <div className="originDropdown">
-          <label className="originLabel">from</label>
-          <select value={this.state.origin} onChange = {this._handleOriginChange} className="select-origin">
-            <option value="" disabled>Choose a city...</option>
-            <option value="SYD">Sydney</option>
-            <option value="YQB">Quebec</option>
-            <option value="MEL">Melbourne</option>
-            <option value="DAM">Damascus</option>
-          </select>
-        </div>
-        <div className="destinationDropdown">
-          <label className="destinationLabel">to</label><select value={this.state.destination} onChange = {this._handleDestinationChange} className="select-destination">
-            <option value="" disabled>Choose a city...</option>
-            <option value="CGN">Cologne</option>
-            <option value="GRU">Sao Paolo</option>
-            <option value="PAR">Paris</option>
-            <option value="SUD">South Sudan</option>
-            <option value="JFK">New York</option>
-          </select>
-        </div>
-        <input type="submit" value="Search" id="searchButton" style={{
-            "background": "#1c4a7d",
-            "color":  "white",
-            "fontSize":  "1.2em",
-            "marginTop":  "10px",
-            "fontFamily": "'Nunito', sans-serif",
-            "padding": "5px 15px 5px 15px",
-            "border": "none",
-            "cursor": "pointer"            
-        }}/>
-      </form>
+      <div className='FromTo'>
+          <div className="originDropdown">
+            <label className="originLabel">from</label>
+            <select value={this.state.origin} onChange = {this._handleOriginChange} className="select-origin">
+              <option value="" disabled>Choose a city...</option>
+              <option value="SYD">Sydney</option>
+              <option value="YQB">Quebec</option>
+              <option value="MEL">Melbourne</option>
+              <option value="DAM">Damascus</option>
+            </select>
+          </div>
+          <div className="destinationDropdown">
+            <label className="destinationLabel">to</label><select value={this.state.destination} onChange = {this._handleDestinationChange} className="select-destination">
+              <option value="" disabled>Choose a city...</option>
+              <option value="CGN">Cologne</option>
+              <option value="GRU">Sao Paolo</option>
+              <option value="PAR">Paris</option>
+              <option value="SUD">South Sudan</option>
+              <option value="JFK">New York</option>
+            </select>
+          </div>
+         
+          <input type="submit" value="Search" id="searchButton"/>
+         </div>  
+        </form>
+      </div>
     )
   }
 
@@ -96,28 +97,20 @@ class FlightDisplay extends Component {
                     <table style={{width: "100%"}}>
                         <tbody>
                             <tr>
-                            <td><h3 className="tableHeading">Origin</h3></td>
-                            <td><h3 className="tableHeading">Dest.</h3></td>
-                            <td><h3 className="tableHeading">Date</h3></td>
-                            <td><h3 className="tableHeading">Flight No.</h3></td>
-                            </tr>
-                            {this.props.flights.map((f) =>
-                            <tr>
-                            <td><p key={f.id}>{f.origin}</p></td>
-                            <td><p key={f.id}>{f.destination}</p></td>
-                            <td><p key={f.id}>{f.date}</p></td>
-                            <td><p key={f.id}>{f.flight_number}</p></td>
-                            <td><form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" style={{
-                                "background": "#1c4a7d",
-                                "color":  "white",
-                                "fontSize":  "1.2em",
-                                "marginTop":  "10px",
-                                "fontFamily": "'Nunito', sans-serif",
-                                "padding": "5px 15px 5px 15px",
-                                "border": "none",
-                                "cursor": "pointer"
-                            }}/>
-                            </form></td>
+                              <td><h3 className="tableHeading">Origin</h3></td>
+                              <td><h3 className="tableHeading">Dest.</h3></td>
+                              <td><h3 className="tableHeading">Date</h3></td>
+                              <td><h3 className="tableHeading">Flight No.</h3></td>
+                              </tr>
+                              {this.props.flights.map((f) =>
+                              <tr>
+                              <td><p key={f.id}>{f.origin}</p></td>
+                              <td><p key={f.id}>{f.destination}</p></td>
+                              <td><p key={f.id}>{f.date}</p></td>
+                              <td><p key={f.id}>{f.flight_number}</p></td>
+                              <td>
+                                <form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" /></form>
+                              </td>
                             </tr>
                                 )}
                         </tbody>
