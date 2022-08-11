@@ -42,7 +42,7 @@ class Login extends Component {
 
         const SERVER_URL = 'http://localhost:3001/search';
 
-        if (this.state.email === 'CJ.Adlay@gmail.com' && this.state.password === 'chicken')
+        if (this.state.email === 'admin@ga.co' && this.state.password === 'chicken')
         {
             console.log('Login succesful');
             window.location.href = `${ SERVER_URL }`;
@@ -57,7 +57,7 @@ class Login extends Component {
                 <h2>Login</h2>
                 <form onSubmit={ this._handleSubmit }>
                     <input onChange={ this._handleEmail } value={ this.state.email } type="text" placeholder="Email" email="email" />
-                    <input onChange={ this._handlePassword } value={ this.state.password } type="text" placeholder="Password" password="password" />
+                    <input onChange={ this._handlePassword } value={ this.state.password } type="password" placeholder="Password" password="password" />
                     <input type="submit" value="Login" />
                 </form>
             </div>  
