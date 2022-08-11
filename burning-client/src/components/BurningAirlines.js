@@ -4,7 +4,6 @@ import axios from 'axios';
 import FlightGallery from './FlightGallery';
 import AirplaneGallery from './AirplaneGallery';
 import FlightSearch from './FlightSearch';
-// import UserLogin from './UserLogin';
 import FlightBooker from './FlightBooker';
 import _ from 'lodash';
 
@@ -56,9 +55,7 @@ class BurningAirlines extends Component {
         return (
             <div>
                 <h1>Burning Airlines</h1>
-                <FlightGallery 
-                    flights={ this.state.flights }
-                />
+                <FlightGallery flights={ this.state.flights } />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
                 <FlightBooker 
                     flights={ this.state.flights }

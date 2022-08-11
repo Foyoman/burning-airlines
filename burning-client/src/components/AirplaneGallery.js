@@ -1,5 +1,13 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 // import _ from 'lodash';
+
+class ShowAirplane extends Component {
+    render() {
+        return (
+            <h1>Here are some Airplanes</h1>
+        );
+    }
+}
 
 const AirplaneGallery = (props) => {
     return (
