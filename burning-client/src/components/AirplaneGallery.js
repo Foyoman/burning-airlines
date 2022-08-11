@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { Component, useState } from 'react';
 // import _ from 'lodash';
+
+
 
 const AirplaneGallery = (props) => {
     return (

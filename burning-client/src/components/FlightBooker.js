@@ -66,56 +66,54 @@ _handleSubmit (e) {
 }
 
 class FlightDisplay extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            flights: [],
-            flight_id: ""
-        };
-        this._handleSeat = this._handleSeat.bind(this);
-    }
+  constructor(props) {
+      super(props);
+      this.state = {
+          flights: [],
+          flight_id: ""
+      };
+      this._handleSeat = this._handleSeat.bind(this);
+  }
 
-    _handleSeat (e) {
-        e.preventDefault();
-        let flight_id = e.target.getAttribute("id");
-        console.log(flight_id);
-        this.setState({ flight_id });
-        this.props.passFlightId(flight_id);
-    } 
+  _handleSeat (e) {
+      e.preventDefault();
+      let flight_id = e.target.getAttribute("id");
+      console.log(flight_id);
+      this.setState({ flight_id });
+      this.props.passFlightId(flight_id);
+  } 
 
-    render() {
-        return (
-            <div>
-              <div className="FlightDisplay"><h2>Available Flights</h2>
-                  <table style={{width: "100%"}}>
-                      <tbody>
-                        <tr>
-                          <td><h3 className="tableHeading">Origin</h3></td>
-                          <td><h3 className="tableHeading">Dest.</h3></td>
-                          <td><h3 className="tableHeading">Date</h3></td>
-                          <td><h3 className="tableHeading">Flight No.</h3></td>
-                        </tr>
-                        {this.props.flights.map((f) =>
-                          <tr>
-                            <td><p key={f.id}>{f.origin}</p></td>
-                            <td><p key={f.id}>{f.destination}</p></td>
-                            <td><p key={f.id}>{f.date}</p></td>
-                            <td><p key={f.id}>{f.flight_number}</p></td>
-                            <td>
-                              <form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" /></form>
-                            </td>
-                          </tr>
-                        )}
-                      </tbody>
-                  </table>
-              </div>
-              {this.state.flight_id ? <SeatMap flight={this.props.flights[0]} /> : ""}
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <div className="FlightDisplay"><h2>Available Flights</h2>
+            <table style={{width: "100%"}}>
+                <tbody>
+                  <tr>
+                    <td><h3 className="tableHeading">Origin</h3></td>
+                    <td><h3 className="tableHeading">Dest.</h3></td>
+                    <td><h3 className="tableHeading">Date</h3></td>
+                    <td><h3 className="tableHeading">Flight No.</h3></td>
+                  </tr>
+                  {this.props.flights.map((f) =>
+                    <tr>
+                      <td><p key={f.id}>{f.origin}</p></td>
+                      <td><p key={f.id}>{f.destination}</p></td>
+                      <td><p key={f.id}>{f.date}</p></td>
+                      <td><p key={f.id}>{f.flight_number}</p></td>
+                      <td>
+                        <form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" /></form>
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+            </table>
+        </div>
+        {this.state.flight_id ? <SeatMap flight={this.props.flights[0]} /> : ""}
+      </div>
+    )
+  }
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 const SERVER_URL2 = 'http://localhost:3001/reservations.json'
 

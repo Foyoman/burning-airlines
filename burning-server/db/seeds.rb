@@ -6,11 +6,11 @@ u4 = User.create :email => 'admin.ga.co', :password => 'chicken', :admin => true
 puts "#{ User.count } users"
 
 Airplane.destroy_all
-a1 = Airplane.create :name => 'BF 109', :rows => 15, :columns => 4
-a2 = Airplane.create :name => 'Narrow Body 420', :rows => 20, :columns => 4
-a3 = Airplane.create :name => 'David Boeing 777', :rows => 30, :columns => 5
-a4 = Airplane.create :name => 'Bang Airbus 69', :rows => 30, :columns => 6
-a5 = Airplane.create :name => 'Osama Was An Actor', :rows => 20, :columns => 5
+a1 = Airplane.create :name => 'Embraer E2', :rows => 15, :columns => 4
+a2 = Airplane.create :name => 'Mitsb. SpaceJet', :rows => 20, :columns => 4
+a3 = Airplane.create :name => 'Boeing 737', :rows => 30, :columns => 5
+a4 = Airplane.create :name => 'Airbus A350', :rows => 30, :columns => 6
+a5 = Airplane.create :name => 'Boeing 747', :rows => 20, :columns => 5
 puts "#{ Airplane.count } airplanes"
 
 Flight.destroy_all 
