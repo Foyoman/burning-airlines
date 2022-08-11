@@ -38,7 +38,7 @@ li a:hover {
     background-image: url('http://cdn.onlinewebfonts.com/svg/img_536969.png');
     background-position: center;
     background-repeat: no-repeat;
-    margin-bottom: 2em;
+    margin: 2em 0;
 }
 
 .seat {

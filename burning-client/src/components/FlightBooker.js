@@ -33,7 +33,7 @@ _handleSubmit (e) {
   render() {
     return (
       <form className="searchForm" onSubmit={ this._handleSubmit }>
-        <h2>Find Flights</h2>
+        <h2>Seach for Flights</h2>
 
         <div className="originDropdown">
           <label className="originLabel">from</label>
@@ -158,7 +158,7 @@ class SeatMap extends Component {
   saveSeat(e){
     e.preventDefault();
     console.log('sending post');
-    this.setState({success: 'Your Seat Has Been Successfully Booked!'});
+    this.setState({success: 'Your flight was successfully booked. Please check your email for confirmation.'});
 
     axios.post(SERVER_URL2, {
       seat_number: this.state.selectedSeat, // "A1"
@@ -177,11 +177,13 @@ class SeatMap extends Component {
         <div>
           <div>
             <h2 className="bookingHeading">Booking Form</h2>
-            <form className="bookingForm">
-
+            <form className="bookingForm" onSubmit={this.saveSeat}>
+              <label> Your email:
+                <input type="email" required />
+              </label>
               <p><span>Selected Seat: {this.state.selectedSeat}</span></p>
               <p className="successMsg">{this.state.success}</p>
-              <button onClick={this.saveSeat}>Book</button>
+              <button>Book</button>
             </form>
 
           </div>
