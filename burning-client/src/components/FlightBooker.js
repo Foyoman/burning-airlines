@@ -34,7 +34,7 @@ _handleSubmit (e) {
     return (
       <div id="search-form">
         <form className="searchForm" onSubmit={ this._handleSubmit }>
-          <h2>Seach for Flights</h2>
+          <h2>Search for Flights</h2>
           <div className='FromTo'>
             <div className="originDropdown">
               <label className="originLabel">origin</label>

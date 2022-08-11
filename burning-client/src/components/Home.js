@@ -7,7 +7,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div id="search-form">
                 <h1>Welcome to the Chicago Bulls Dream team</h1>
                 <Login onSubmit={ this._handleLogin }/>
             </div>

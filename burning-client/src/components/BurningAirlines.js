@@ -53,14 +53,14 @@ class BurningAirlines extends Component {
 
     render() {
         return (
-            <div>
+            <div id="search-form">
                 <h1>Burning Airlines</h1>
                 <FlightGallery flights={ this.state.flights } />
                 <AirplaneGallery airplanes={ this.state.airplanes } />
-                <FlightBooker 
+                {/* <FlightBooker 
                     flights={ this.state.flights }
                     airplanes={ this.state.airplanes } 
-                />
+                /> */}
             </div>
         )
     }
