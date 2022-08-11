@@ -32,39 +32,32 @@ _handleSubmit (e) {
 
   render() {
     return (
-<<<<<<< HEAD
-      <form className="searchForm" onSubmit={ this._handleSubmit }>
-        <h2>Seach for Flights</h2>
-=======
       <div id="search-form">
         <form className="searchForm" onSubmit={ this._handleSubmit }>
-          <h2>Find Flights</h2>
->>>>>>> addbc1931ce1ce26bb2783cadcb1dedc825f0d5a
-
-      <div className='FromTo'>
-          <div className="originDropdown">
-            <label className="originLabel">from</label>
-            <select value={this.state.origin} onChange = {this._handleOriginChange} className="select-origin">
-              <option value="" disabled>Choose a city...</option>
-              <option value="SYD">Sydney</option>
-              <option value="YQB">Quebec</option>
-              <option value="MEL">Melbourne</option>
-              <option value="DAM">Damascus</option>
-            </select>
-          </div>
-          <div className="destinationDropdown">
-            <label className="destinationLabel">to</label><select value={this.state.destination} onChange = {this._handleDestinationChange} className="select-destination">
-              <option value="" disabled>Choose a city...</option>
-              <option value="CGN">Cologne</option>
-              <option value="GRU">Sao Paolo</option>
-              <option value="PAR">Paris</option>
-              <option value="SUD">South Sudan</option>
-              <option value="JFK">New York</option>
-            </select>
-          </div>
-         
-          <input type="submit" value="Search" id="searchButton"/>
-         </div>  
+          <h2>Seach for Flights</h2>
+          <div className='FromTo'>
+            <div className="originDropdown">
+              <label className="originLabel">origin</label>
+              <select value={this.state.origin} onChange = {this._handleOriginChange} className="select-origin">
+                <option value="" disabled>Choose a city</option>
+                <option value="SYD">Sydney</option>
+                <option value="YQB">Quebec</option>
+                <option value="MEL">Melbourne</option>
+                <option value="DAM">Damascus</option>
+              </select>
+            </div>
+            <div className="destinationDropdown">
+              <label className="destinationLabel">destination</label><select value={this.state.destination} onChange = {this._handleDestinationChange} className="select-destination">
+                <option value="" disabled>Choose a city</option>
+                <option value="CGN">Cologne</option>
+                <option value="GRU">Sao Paolo</option>
+                <option value="PAR">Paris</option>
+                <option value="SUD">South Sudan</option>
+                <option value="JFK">New York</option>
+              </select>
+            </div>
+            <input type="submit" value="Search" id="searchButton"/>
+          </div>  
         </form>
       </div>
     )
@@ -93,31 +86,30 @@ class FlightDisplay extends Component {
     render() {
         return (
             <div>
-                <div className="FlightDisplay"><h2>Available Flights</h2>
-                    <table style={{width: "100%"}}>
-                        <tbody>
-                            <tr>
-                              <td><h3 className="tableHeading">Origin</h3></td>
-                              <td><h3 className="tableHeading">Dest.</h3></td>
-                              <td><h3 className="tableHeading">Date</h3></td>
-                              <td><h3 className="tableHeading">Flight No.</h3></td>
-                              </tr>
-                              {this.props.flights.map((f) =>
-                              <tr>
-                              <td><p key={f.id}>{f.origin}</p></td>
-                              <td><p key={f.id}>{f.destination}</p></td>
-                              <td><p key={f.id}>{f.date}</p></td>
-                              <td><p key={f.id}>{f.flight_number}</p></td>
-                              <td>
-                                <form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" /></form>
-                              </td>
-                            </tr>
-                                )}
-                        </tbody>
-                    </table>
-
-                </div>
-                {this.state.flight_id ? <SeatMap flight={this.props.flights[0]} /> : ""}
+              <div className="FlightDisplay"><h2>Available Flights</h2>
+                  <table style={{width: "100%"}}>
+                      <tbody>
+                        <tr>
+                          <td><h3 className="tableHeading">Origin</h3></td>
+                          <td><h3 className="tableHeading">Dest.</h3></td>
+                          <td><h3 className="tableHeading">Date</h3></td>
+                          <td><h3 className="tableHeading">Flight No.</h3></td>
+                        </tr>
+                        {this.props.flights.map((f) =>
+                          <tr>
+                            <td><p key={f.id}>{f.origin}</p></td>
+                            <td><p key={f.id}>{f.destination}</p></td>
+                            <td><p key={f.id}>{f.date}</p></td>
+                            <td><p key={f.id}>{f.flight_number}</p></td>
+                            <td>
+                              <form className="seatFetcher" id={f.id} onSubmit={ this._handleSeat }><input type="submit" value="View" /></form>
+                            </td>
+                          </tr>
+                        )}
+                      </tbody>
+                  </table>
+              </div>
+              {this.state.flight_id ? <SeatMap flight={this.props.flights[0]} /> : ""}
             </div>
         )
     }
@@ -173,6 +165,9 @@ class SeatMap extends Component {
             <form className="bookingForm" onSubmit={this.saveSeat}>
               <label> Your email:
                 <input type="email" required />
+              </label>
+              <label> Your money: $
+                <input type="number" required />
               </label>
               <p><span>Selected Seat: {this.state.selectedSeat}</span></p>
               <p className="successMsg">{this.state.success}</p>

@@ -13,7 +13,7 @@ const FlightGallery = (props) => {
             <table style={{width: "100%"}}>
                 <thead>
                     <tr>
-                    <th>Flight number</th>
+                    <th>Flight no.</th>
                     <th>Origin</th>
                     <th>Destination</th>
                     <th>Date</th>
@@ -32,8 +32,8 @@ const FlightGallery = (props) => {
                                 <td>{ f.flight_number }</td>
                                 <td>{ f.origin }</td>
                                 <td>{ f.destination }</td>
-                                <td>{ f.date }</td>
-                                <td>{ f.airplane.name }</td>
+                                <td><marquee>{ f.date }</marquee></td>
+                                <td><marquee>{ f.airplane.name }</marquee></td>
                                 <td>{ f.seats.length - f.reservations.length }</td>
                             </tr>
                         )
