@@ -32,14 +32,9 @@ _handleSubmit (e) {
 
   render() {
     return (
-<<<<<<< HEAD
-      <form className="searchForm" onSubmit={ this._handleSubmit }>
-        <h2>Seach for Flights</h2>
-=======
       <div id="search-form">
         <form className="searchForm" onSubmit={ this._handleSubmit }>
           <h2>Find Flights</h2>
->>>>>>> addbc1931ce1ce26bb2783cadcb1dedc825f0d5a
 
       <div className='FromTo'>
           <div className="originDropdown">
@@ -122,8 +117,6 @@ class FlightDisplay extends Component {
         )
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
 
 const SERVER_URL2 = 'http://localhost:3001/reservations.json'
 
